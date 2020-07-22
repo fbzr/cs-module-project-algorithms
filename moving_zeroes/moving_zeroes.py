@@ -17,6 +17,7 @@ def moving_zeroes(arr):
     # move that value to position 0
 
     # repeat the process till the end of list
+    # return list
 
     for i in range(len(arr)):
         if arr[i] != 0:
