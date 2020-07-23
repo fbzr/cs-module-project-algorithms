@@ -19,12 +19,25 @@ def moving_zeroes(arr):
     # repeat the process till the end of list
     # return list
 
-    for i in range(len(arr)):
-        if arr[i] != 0:
-            value = arr.pop(i)
-            arr.insert(0, value)
+    # for i in range(len(arr)):
+    #     if arr[i] != 0:
+    #         value = arr.pop(i)
+    #         arr.insert(0, value)
     
-    return arr
+    # return arr
+
+    ### Improved solution:
+    left = 0
+    right = len(arr) - 1
+
+    while left < right:
+        if arr[left] == 0 and arr[right] != 0:
+            arr[left], arr[right] = arr[right], arr[left]
+        else:
+            if arr[left] != 0:
+                left += 1
+            if arr[right] == 0:
+                right -= 1
 
 
 if __name__ == '__main__':
